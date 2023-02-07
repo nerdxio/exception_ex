@@ -14,7 +14,8 @@ public class SchedulingConfig {
     private final Logger logger = LoggerFactory.getLogger(SchedulingConfig.class);
 
     @Scheduled(fixedRate = 1000)
-    public void printTimeInLog() {
+    public void printTimeInLog() throws InterruptedException {
+        Thread.sleep(4000);
         logger.info("The current time is {}", LocalTime.now());
     }
 
